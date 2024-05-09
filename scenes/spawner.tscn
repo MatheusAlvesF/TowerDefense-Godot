@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfn7u1o7tyj1"]
+
+[ext_resource type="Script" path="res://scripts/Spawner.gd" id="1_1u3la"]
+[ext_resource type="PackedScene" uid="uid://b6g6eh51411t0" path="res://scenes/slime.tscn" id="2_jokxv"]
+[ext_resource type="PackedScene" uid="uid://c3arlmm63wd5s" path="res://scenes/slime_green.tscn" id="3_11ivh"]
+
+[node name="Spawner" type="Marker2D"]
+position = Vector2(516, 143)
+script = ExtResource("1_1u3la")
+itens = Array[PackedScene]([ExtResource("2_jokxv"), ExtResource("3_11ivh")])
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
