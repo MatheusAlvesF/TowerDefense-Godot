@@ -3,7 +3,6 @@ extends CharacterBody2D
 @export var speed : float = 5000
 @export var hp : float = 50
 @onready var progress_bar : ProgressBar = $ProgressBar
-@onready var hitbox = $Hitbox
 @export var damage : int = 20
 
 func _ready():
